@@ -40,7 +40,7 @@ var calculations = (function(){
         for( j = 0; j < orderOp.length; j++){
             for(k = 0; k < operators.length; k++){
                 if (orderOp[j] === operators[k]) {
-                    console.log(operations);
+                    console.log('operationsStr: '+operations);
                     console.log(orderOp[j], j);
                     tempStr = new RegExp('[0-9.]+['+orderOp[j]+'][0-9.]+');
                     console.log(tempStr);
