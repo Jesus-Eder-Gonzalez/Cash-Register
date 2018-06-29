@@ -34,14 +34,14 @@ var calculations = (function(){
     var replaceResult = 0;
     var tempNum;
     console.log(operators.length);
-    var i = 3;
+
     while(length > 0){
 
         for( j = 0; j < orderOp.length; j++){
             for(k = 0; k < operators.length; k++){
                 if (orderOp[j] === operators[k]) {
+                    console.log(operations);
                     console.log(orderOp[j], j);
-                    // tempStr = '/[0-9]'+orderOp[j]+'[0-9]+/';
                     tempStr = new RegExp('[0-9.]+['+orderOp[j]+'][0-9.]+');
                     console.log(tempStr);
                     
