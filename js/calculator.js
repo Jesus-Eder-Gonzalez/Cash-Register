@@ -41,8 +41,8 @@ var calculations = (function(){
             for(k = 0; k < operators.length; k++){
                 if (orderOp[j] === operators[k]) {
                     console.log(orderOp[j], j);
-                    // tempStr = '/[0-9]+'+orderOp[j]+'[0-9]+/';
-                    tempStr = new RegExp('[0-9]+['+orderOp[j]+'][0-9]+');
+                    // tempStr = '/[0-9]'+orderOp[j]+'[0-9]+/';
+                    tempStr = new RegExp('[0-9.]+['+orderOp[j]+'][0-9.]+');
                     console.log(tempStr);
                     
                     tempResult = operations.match(tempStr).toString();
@@ -52,7 +52,7 @@ var calculations = (function(){
                     switch (orderOp[j]) {
                         case '*':
                         tempNum = tempResult.split(orderOp[j]);
-
+                        console.log('tempNum: '+tempNum);
                         replaceResult = mult(parseFloat(tempNum[0]),parseFloat(tempNum[1]));
                         console.log('join: ' + tempResult + 'replace: '+replaceResult);
                         operations = operations.replace(tempResult, replaceResult);
@@ -60,23 +60,25 @@ var calculations = (function(){
 
                         case '/':
                         tempNum = tempResult.split(orderOp[j]);
-
+                        console.log('tempNum: '+tempNum);
                         replaceResult = div(parseFloat(tempNum[0]),parseFloat(tempNum[1]));
+                        
                         console.log('join: ' + tempResult + 'replace: '+replaceResult);
                         operations = operations.replace(tempResult, replaceResult);
                         break;
 
                         case '+':
                         tempNum = tempResult.split(orderOp[j]);
-
+                        console.log('tempNum: '+tempNum);
                         replaceResult = add(parseFloat(tempNum[0]),parseFloat(tempNum[1]));
+
                         console.log('join: ' + tempResult + 'replace: '+replaceResult);
                         operations = operations.replace(tempResult, replaceResult);
                         break;
 
                         case '-':
                         tempNum = tempResult.split(orderOp[j]);
-
+                        console.log('tempNum: '+tempNum);
                         replaceResult = sub(parseFloat(tempNum[0]),parseFloat(tempNum[1]));
                         console.log('join: ' + tempResult + 'replace: '+replaceResult);
                         operations = operations.replace(tempResult, replaceResult);

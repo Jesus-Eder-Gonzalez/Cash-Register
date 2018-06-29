@@ -11,6 +11,7 @@ var checkBal = false;
 function updateDisplay(number) {
     //console.log(number);
     display.innerText = number;
+    display.innerText = display.innerText.substring(0,12);
     if(number < 0){
         display.style.color ='red';
     } else {
